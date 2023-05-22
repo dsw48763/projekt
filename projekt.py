@@ -48,3 +48,11 @@ try:
         print(child.tag, child.text)
 except Exception as e:
     print("Failed to load XML data from file:", e)
+#task7
+output_file = "output.xml"
+try:
+    with open(output_file, "w") as file:
+        tree.write(file)
+    print("XML data saved to", output_file)
+except Exception as e:
+    print("Failed to save XML data:", e)
