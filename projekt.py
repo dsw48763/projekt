@@ -2,57 +2,57 @@ import sys
 import json
 import yaml
 #task1
-arguments = sys.argv[1:]
-print("Passed arguments:", arguments)
+argumenty = sys.argv[1:]
+print("zadane argumenty:", argumenty)
 #task2
-json_file = "file.json"
+plikjson = "file.json"
 try:
-    with open(json_file, "r") as file:
+    with open(plikjson, "r") as file:
         data = json.load(file)
-    print("Loaded JSON data:", data)
+    print("Zaladowano dane", data)
 except Exception as e:
-    print("Failed to load JSON data from file:", e)
+    print("Nie udalo sie zaladowac danych", e)
 
 #task3
-output_file = "output.json"
+plikw = "output.json"
 try:
-    with open(output_file, "w") as file:
+    with open(plikwyjscie, "w") as file:
         json.dump(data, file, indent=4)
-    print("JSON data saved to", output_file)
+    print("Dane zapisane do: ", plikwyjscie)
 except Exception as e:
-    print("Failed to save JSON data:", e)
+    print("Nie udalo sie zapisac danych: ", e)
 
 #task4
-yml_file = "file.yml"
+plikyml = "file.yml"
 try:
-    with open(yml_file, "r") as file:
+    with open(plikyml, "r") as file:
         data = yaml.safe_load(file)
-    print("Loaded YAML data:", data)
+    print("Zaladowano YAML: ", data)
 except Exception as e:
-    print("Failed to load YAML data from file:", e)
+    print("Nie udalo sie zaladowac YAML: ", e)
 #task5
-output_file = "output.yml"
+plikw = "output.yml"
 try:
-    with open(output_file, "w") as file:
+    with open(plikw, "w") as file:
         yaml.dump(data, file)
-    print("YAML data saved to", output_file)
+    print("Dane zapisane do: ", plikw)
 except Exception as e:
-    print("Failed to save YAML data:", e)
+    print("Nie udalo sie zapisac danych: ", e)
 #task6
-xml_file = "file.xml"
+plikxml = "file.xml"
 try:
-    tree = ET.parse(xml_file)
-    root = tree.getroot()
-    print("Loaded XML data:")
-    for child in root:
-        print(child.tag, child.text)
+    x = ET.parse(plikxml)
+    root = x.getroot()
+    print("Zaladowano dane:")
+    for i in root:
+        print(i.tag, i.text)
 except Exception as e:
-    print("Failed to load XML data from file:", e)
+    print("Nie udalo sie zaladowac danych:", e)
 #task7
-output_file = "output.xml"
+plikw = "output.xml"
 try:
-    with open(output_file, "w") as file:
-        tree.write(file)
-    print("XML data saved to", output_file)
+    with open(plikw, "w") as file:
+        x.write(file)
+    print("Dane zapisano w: ", plikw)
 except Exception as e:
-    print("Failed to save XML data:", e)
+    print("Nie udalo sie zapisac danych", e)
