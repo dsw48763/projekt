@@ -1,7 +1,7 @@
 import sys
 import json
 import yaml
-#task1
+#Task1
 argumenty = sys.argv[1:]
 print("zadane argumenty:", argumenty)
 #task2
